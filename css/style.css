@@ -1,0 +1,177 @@
+/*-------------------------------------------------
+PAGE BODY
+
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+-------------------------------------------------*/
+
+/*-------------------------------------------------
+GENERAL
+
+textarea, input {
+    border: 1px solid #a0a0a0;
+    background-color: #d5d6d7;
+    overflow: auto;
+}
+
+h1, h2, h3 {
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+h2 {
+    margin: 0px 0px 10px 0px;
+}
+
+h3 {
+    margin: 30px 0px 6px 0px;
+}
+
+p {
+    margin: 0px 0px 12px 0px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #00ffff;
+    background: #fff;
+    padding: 6px 6px 6px 6px;
+}
+-------------------------------------------------*/
+
+/*-------------------------------------------------
+TOP MENU
+-------------------------------------------------*/
+h1 {
+    border: 0;
+    text-align: left;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+    font-size: 36pt;
+    padding: 4px 0px 0px 4px;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 30pt;
+    margin: 0px 0px 0px 0px;
+}
+
+#title {
+    border: 0;
+    text-align: left;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+    font-size: 36pt;
+    padding: 4px 0px 0px 4px;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 30pt;
+}
+
+#menu {
+    padding: 8px 20px 4px 8px;
+    margin: 0px 0px 0px 0px;
+    /*background-color: #003366;*/
+    background-color: #000000;
+    color: #ffffff;
+    text-align: left;
+}
+
+#menu a {
+    /* font-family: Verdana, Arial, Sans-Serif;*/
+    font-family: Helvetica, sans-serif;
+    color: #ffffff;
+    /*font-size: 10pt;*/
+    /*font-weight: bold;*/
+}
+
+#menu a:link {
+    /*color: #bbddff;*/
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#menu a:active {
+    /*color: #ffffff; */
+    color: #ffffff; 
+    text-decoration: underline; 
+}
+
+#menu a:visited {
+    /*color: #ddeeff; */
+    color: #ffffff; 
+    text-decoration: none; 
+}
+
+#menu a:hover {
+    /*color: #ffffff; */
+    color: #ffffff; 
+    /* text-decoration: underline; */
+    
+    text-decoration: none; 
+    /*border-bottom: 1px solid #b0b1b2;*/
+    border-bottom: 1px solid #ffffff;
+    background-color: #000000;
+}
+
+
+/*-------------------------------------------------
+DOCUMENTATION
+-------------------------------------------------*/
+
+div.caution {
+    /* background-color:#ffe0e0; */
+    background-color:#00ffff;
+    padding: 6px;
+    margin-bottom: 12px;
+}
+
+div.synopsis {
+    background-color:#ffe0e0;
+    padding: 6px 20px;
+    margin-bottom: 12px;
+}
+
+div.atomusage {
+    font-family: courier, fixed, mono;
+/*    font-size: 121%; */
+    margin: 8px 0px 16px 0px;
+    font-weight: bold;
+}
+
+div.param {
+    font-family: courier, fixed, mono;
+/*    font-size: 121%; */
+    float: left;
+    width: 60px;
+    text-align: right;
+    margin-right: 10px;
+    clear: left;
+}
+
+div.paramtext {
+    float: left;
+    width: 82%;
+    margin-bottom: 4px;
+}
+
+/*-------------------------------------------------
+LITERATURE
+-------------------------------------------------*/
+
+div.bibentry {
+    /* border: 1px solid #d0d0d0;
+    background-color: #e0e0e0; */
+    margin: 0px 0px 20px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
