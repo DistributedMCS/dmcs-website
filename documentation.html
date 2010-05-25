@@ -41,11 +41,63 @@
     
       <div class="grid_9">
 
-	<h2>Distributed Nonmonotonic Multi-Context Systems</h2>
-                        
-	<p>
-	Coming soon.
-	</p>
+	<h2>Getting started with dmcs</h2>
+
+	Before you can utilise DMCS, you have to properly set up the system.
+
+	<br/>
+
+	<b>Step one</b>:
+	<br/>
+	If you decide to use a manager for your system, then proceed with this step, otherwise skip to the next step.
+
+	<br/>
+	<br/>
+	
+	$ dmcsm [--port=PORT]
+	
+	<br/>
+	<br/>
+	
+	The command-line argument --port informs the daemon the port that it is going to use for communication.
+	<br/>	
+
+	<b>Step Two</b>:
+	<br/>
+	For each context in the system run the following command on its designated machine.
+
+	<br/>
+	<br/>
+	
+	$ dmcsd --context=NUM --kb=C_NUM.kb --br=C_NUM.br --manager=HOST:PORT
+
+	<br/>	
+	<br/>
+	
+	The command-line argument --context tells the daemon the context id that it
+	will represent. The knowledge base and the bridge rule files are provided via --kb
+	and --br, respectively. The --manager option is used to set up the location of the
+	manager component.
+	<br/>
+	If you have decided to run the system without the manager, then simply omit the --manager option.
+
+	<br/>	
+
+	<b>Step Three</b>:
+	<br/>
+	Now that everything is set up, you can compute the equilibria of M w.r.t context ROOT as follows:
+	<br/>
+	<br/>
+	
+	$ dmcsc --context=ROOT --manager=HOST:PORT
+
+	<br/>	
+	<br/>
+	The paramters have the same meaning as above.
+	<br/>
+	If you have decided to run the system without the manager, then simple replace the --manager option with --config=CONFIG_FILE, where CONFIG_FILE contains all the host names and ports of all contexts in the system,<a href="examples\config">click here for an example</a>.
+
+
 
 	<div style="border-top: 1px solid #999; background-color: inherit; color: #999; font-size: 8.5pt;">
 	  <p>$Id$</p>
