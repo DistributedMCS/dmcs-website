@@ -1,57 +1,12 @@
-/*-------------------------------------------------
-PAGE BODY
 
 body {
-    font-family: Helvetica, sans-serif;
-    background-color: #ffffff;
-    padding: 0;
-    margin: 0 auto;
-    text-align: center;
+  overflow-y: scroll;
 }
-
--------------------------------------------------*/
-
-/*-------------------------------------------------
-GENERAL
-
-textarea, input {
-    border: 1px solid #a0a0a0;
-    background-color: #d5d6d7;
-    overflow: auto;
-}
-
-h1, h2, h3 {
-    font-family: Helvetica, sans-serif;
-    font-weight: bold;
-}
-
-
-h2 {
-    margin: 0px 0px 10px 0px;
-}
-
-h3 {
-    margin: 30px 0px 6px 0px;
-}
-
-p {
-    margin: 0px 0px 12px 0px;
-}
-
-table {
-    border-collapse: collapse;
-}
-
-td {
-    border: 1px solid #00ffff;
-    background: #fff;
-    padding: 6px 6px 6px 6px;
-}
--------------------------------------------------*/
 
 /*-------------------------------------------------
 TOP MENU
 -------------------------------------------------*/
+
 h1 {
     border: 0;
     text-align: left;
@@ -123,6 +78,60 @@ h1 {
     background-color: #000000;
 }
 
+/*---------------------------------------------
+ TABLE from http://www.designinfluences.com/fluid960gs/
+----------------------------------------------- */
+table {
+	width:100%;
+	border:1px solid #bbb;
+	margin-bottom:10px;
+}
+col.colC {
+	width:8em;
+}
+th, td {
+	padding:.2em 1em;
+	text-align:left;
+}
+thead th {
+	border-bottom:2px solid #888;
+	background:#bbb;
+	padding:.4em 1em .2em;
+}
+thead th.table-head {
+	font-size:1em;
+	font-weight:normal;
+	text-transform:uppercase;
+	color:#fff;
+	background:#555;
+	border:1px solid #555;
+}
+tbody th,
+tbody td {
+	border-top:1px solid #bbb;
+	border-bottom:1px solid #bbb;
+	background:#eee;
+}
+tbody tr.odd th,
+tbody tr.odd td {
+	background:#fff;
+}
+tfoot th,
+tfoot td {
+	border-top:2px solid #666;
+	background:#eee;
+}
+tfoot tr.total th,
+tfoot tr.total td {
+	border-top:6px double #666;
+}
+tfoot tr.total th {
+	text-transform:uppercase;
+}
+th.right-align,
+td.right-align {
+	text-align:right;
+}
 
 /*-------------------------------------------------
 DOCUMENTATION
