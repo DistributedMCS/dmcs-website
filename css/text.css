@@ -65,6 +65,16 @@ li {
 	margin-left: 30px;
 }
 
+pre {
+        border: 1px dashed rgb(180,180,180);
+	font-family: "Courier New", Courier, mono, monospace;
+	font-size: 1em;
+	font-style: normal;
+	margin: 0.5em 0.5em 0.5em 0.5em;
+	padding: 1em 0.5em 1em 1em;
+        /* overflow: auto; */
+}
+
 p,
 dl,
 hr,

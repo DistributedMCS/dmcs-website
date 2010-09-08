@@ -52,43 +52,56 @@
 	<pre>$ dmcsm [--port=PORT]</pre>
 
 	<p>
-	  The command-line argument <em>--port</em> informs the daemon
+	  The command-line argument <tt>--port</tt> informs the daemon
 	  the port that it is going to use for communication.
 	</p>
 
 	<p><b>Step 2</b>: For each context in the system run the
 	following command on its designated machine.</p>
 	
-	<pre>$ dmcsd --context=NUM --kb=C_NUM.lp --br=C_NUM.br --manager=HOST:PORT</pre>
+	<pre>$ dmcsd --context=NUM --kb=FILE --br=FILE --manager=HOST:PORT 
+        --query-variables=QUERY_VARS</pre>
 	
 	<p>Command-line arguments:
 	  <ul>
-	    <li><em>--context</em>: identifier of the context that the
+	    <li><tt>--context</tt>: identifier of the context that the
 	    daemon represents,</li>
-	    <li><em>--kb</em>: name of the file that stores the local
+	    <li><tt>--kb</tt>: name of the file that stores the local
 	    knowledge base,</li>
-	    <li><em>--br</em>: name of the file that stores
+	    <li><tt>--br</tt>: name of the file that stores
 	    bridge rules,</li>
-	    <li><em>--manager</em>: set up the location of the manager.</li>
+	    <li><tt>--manager</tt>: set up the location of the
+	    manager.</li>
+	    <li><tt>--query-variables</tt> specifies a list of intergers
+	    (encompassed in a string), each is corresponding to a
+	    filter of atoms for the output of a context in the system,
+	    in which bit position <em>i</em> of the <em>k-th</em>
+	    interger in the list is set to 1 if the user
+	    wants to see the truth value of the <em>i-th</em> atom in
+	    context <em>Ck</em>. Note that in our test cases, atoms in
+	    a context <em>Ck</em> are
+	    ordered
+	    as <em>ak</em>, <em>bk</em>, <em>ck</em>,... i.e., <em>ak</em>
+	    has position 1, <em>bk</em> has position 2, and so on.</li>
 	  </ul>
 
 	<p><b>Step 3</b>: The equilibria of the system
-	wrt. context ROOT can be computed by running:</p>
+	wrt. context NUM can be computed by running:</p>
 	
-	<pre>$ dmcsc --context=ROOT --manager=HOST:PORT</pre>
+	<pre>$ dmcsc --context=NUM --manager=HOST:PORT</pre>
 
 	<p>The paramters have the same meaning as above.</p>
 
-	<h3>Running the developing version of dmcs</h3>
+	<h3>Running the development version of dmcs</h3>
 
 	<p>Without the present of the manager, one can run the system
 	as follows.</p>
 
 	<p><b>Step 1:</b> Setup the daemons for all contexts in the system</p>
 
-	<pre>$ dmcsd --context=NUM --port=PORT --kb=C_NUM.lp --br=C_NUM.br --topology=FILENAME</pre>
+	<pre>$ dmcsd --context=NUM --port=PORT --kb=FILE --br=FILE --topology=FILE</pre>
 
-	<p>where the <em>--topology</em> argument specifies the file
+	<p>where the <tt>--topology</tt> argument specifies the file
 	which sores the pre-computed topology of the system. There
 	are two options: either the original topology in
 	a <em>.top</em> file or the optimal one in a <em>.opt</em>
@@ -101,54 +114,32 @@
 
 	<ul>
 	  <li>If the original topology was loaded, run:
-	    <pre>./dmcsc --hostname=HOST --port=PORT --system-size=NUM --query-variables=QUERY_VARS</pre>
+	    <pre>$ dmcsc --hostname=HOST --port=PORT --system-size=NUM --query-variables=QUERY_VARS</pre>
 	  </li>
 	  <li>
 	    Otherwise, when the optimal topology was loaded, run:
-	    <pre>./dmcsc --hostname=HOST --port=PORT --system-size=NUM</pre>
+	    <pre>$ dmcsc --hostname=HOST --port=PORT --system-size=NUM</pre>
 	  </li>
 	</ul>
 
 	<p>where:</p>
 	<ul>
 	  <li>
-	    <em>--hostname</em> and <em>--port</em> hold hostname and
+	    <tt>--hostname</tt> and <tt>--port</tt>: hostname and
 	    port of the ROOT context to be queried,
 	  </li>
 	  <li>
-	    <em>--system-size</em> is the number of context in the MCS, and
+	    <tt>--system-size</tt>: the number of context in the MCS, and
 	  </li>
 	  <li>
-	    <em>--query-variables</em> specifies a list of intergers
-	    (encompassed in a string), each is corresponding to a
-	    filter of atoms for the output of a context in the system,
-	    in which bit position <em>i</em> of the <em>k-th</em>
-	    interger in the list is set to 1 if the user
-	    wants to see the truth value of the <em>i-th</em> atom in
-	    context <em>Ck</em>. Note that in our test cases, atoms in
-	    a context <em>Ck</em> are
-	    ordered
-	    as <em>ak</em>, <em>bk</em>, <em>ck</em>,... i.e., <em>ak</em>
-	    has position 1, <em>bk</em> has position 2, and so on.
+	    <tt>--query-variables</tt>: as above.
 	  </li>
 	</ul>
-
-	<p>In all of our test cases, the above command lines are
-	automatically generated. More conveniently, we provide shell
-	scripts that automatically execute all the setup and query
-	steps in just one run. For this, run (note that we need all
-	test cases stored in a sub directory 'test' of the current directory):
-	  <pre>$ /bin/bash tests/SHELL_SCRIPT_NAME </pre>
-	</p>
-
-	<p><a href="example/test.zip">Click here to download our test case.</a></p>
 
 	<div style="border-top: 1px solid #999; background-color: inherit; color: #999; font-size: 8.5pt;">
 	  <p>$Id: documentation.html 2163 2010-09-08 10:15:56Z mmsc
 	  $</p>
 	</div>
-
-
 
       </div>
 
