@@ -43,61 +43,50 @@
 
 	<h2>Getting started with dmcs</h2>
 
-	Before you can utilise DMCS, you have to properly set up the system.
+	<p>Before utilizing DMCS, you need to properly set up the system.</p>
 
-	<br/>
+	<p><b>Step 1</b>: If you decide to use a manager for your
+	  system, then proceed with this step, otherwise skip to the
+	  next step.</p>
 
-	<b>Step one</b>:
-	<br/>
-	If you decide to use a manager for your system, then proceed with this step, otherwise skip to the next step.
+	<pre>$ dmcsm [--port=PORT]</pre>
 
-	<br/>
-	<br/>
+	<p>
+	  The command-line argument <em>--port</em> informs the daemon
+	  the port that it is going to use for communication.
+	</p>
+
+	<p><b>Step 2</b>: For each context in the system run the
+	following command on its designated machine.</p>
 	
-	$ dmcsm [--port=PORT]
+	<pre>$ dmcsd --context=NUM --kb=C_NUM.lp --br=C_NUM.br --manager=HOST:PORT</pre>
 	
-	<br/>
-	<br/>
+	<p>Command-line arguments:
+	  <ul>
+	    <li><em>--context</em>: identifier of the context that the
+	    daemon represents,</li>
+	    <li><em>--kb</em>: name of the file that stores the local
+	    knowledge base,</li>
+	    <li><em>--br</em>: name of the file that stores
+	    bridge rules,</li>
+	    <li><em>--manager</em>: set up the location of the manager.</li>
+	  </ul>
+
+	<p><b>Step 3</b>: The equilibria of the system
+	wrt. context ROOT can be computed by running:</p>
 	
-	The command-line argument --port informs the daemon the port that it is going to use for communication.
-	<br/>	
+	<pre>$ dmcsc --context=ROOT --manager=HOST:PORT</pre>
 
-	<b>Step Two</b>:
-	<br/>
-	For each context in the system run the following command on its designated machine.
+	<p>The paramters have the same meaning as above.</p>
 
-	<br/>
-	<br/>
-	
-	$ dmcsd --context=NUM --kb=C_NUM.kb --br=C_NUM.br --manager=HOST:PORT
+	<h3>Running the developing version of dmcs</h3>
 
-	<br/>	
-	<br/>
-	
-	The command-line argument --context tells the daemon the context id that it
-	will represent. The knowledge base and the bridge rule files are provided via --kb
-	and --br, respectively. The --manager option is used to set up the location of the
-	manager component.
-	<br/>
-	If you have decided to run the system without the manager, then simply omit the --manager option.
+	<p>Without the present of the manager, one can run the system
+	as follows.</p>
 
-	<br/>	
+	<p><b>Step 1:</b> Setup the daemons for all contexts in the system</p>
 
-	<b>Step Three</b>:
-	<br/>
-	Now that everything is set up, you can compute the equilibria of M w.r.t context ROOT as follows:
-	<br/>
-	<br/>
-	
-	$ dmcsc --context=ROOT --manager=HOST:PORT
-
-	<br/>	
-	<br/>
-	The paramters have the same meaning as above.
-	<br/>
-	If you have decided to run the system without the manager, then simple replace the --manager option with --config=CONFIG_FILE, where CONFIG_FILE contains all the host names and ports of all contexts in the system,<a href="examples\config">click here for an example</a>.
-
-
+	<pre>$ dmcsd --context=NUM --port=PORT --kb=C_NUM.lp --br=C_NUM.br --topology=[FILENAME]</pre>
 
 	<div style="border-top: 1px solid #999; background-color: inherit; color: #999; font-size: 8.5pt;">
 	  <p>$Id$</p>
