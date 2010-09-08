@@ -86,11 +86,69 @@
 
 	<p><b>Step 1:</b> Setup the daemons for all contexts in the system</p>
 
-	<pre>$ dmcsd --context=NUM --port=PORT --kb=C_NUM.lp --br=C_NUM.br --topology=[FILENAME]</pre>
+	<pre>$ dmcsd --context=NUM --port=PORT --kb=C_NUM.lp --br=C_NUM.br --topology=FILENAME</pre>
+
+	<p>where the <em>--topology</em> argument specifies the file
+	which sores the pre-computed topology of the system. There
+	are two options: either the original topology in
+	a <em>.top</em> file or the optimal one in a <em>.opt</em>
+	file. Note that all contexts must agree on the type of
+	topology loaded.</p>
+
+	<p><strong>Step 2:</strong> Computing the equilibria now
+	depends on what kind of topology was loaded in the previous
+	step:</p>
+
+	<ul>
+	  <li>If the original topology was loaded, run:
+	    <pre>./dmcsc --hostname=HOST --port=PORT --system-size=NUM --query-variables=QUERY_VARS</pre>
+	  </li>
+	  <li>
+	    Otherwise, when the optimal topology was loaded, run:
+	    <pre>./dmcsc --hostname=HOST --port=PORT --system-size=NUM</pre>
+	  </li>
+	</ul>
+
+	<p>where:</p>
+	<ul>
+	  <li>
+	    <em>--hostname</em> and <em>--port</em> hold hostname and
+	    port of the ROOT context to be queried,
+	  </li>
+	  <li>
+	    <em>--system-size</em> is the number of context in the MCS, and
+	  </li>
+	  <li>
+	    <em>--query-variables</em> specifies a list of intergers
+	    (encompassed in a string), each is corresponding to a
+	    filter of atoms for the output of a context in the system,
+	    in which bit position <em>i</em> of the <em>k-th</em>
+	    interger in the list is set to 1 if the user
+	    wants to see the truth value of the <em>i-th</em> atom in
+	    context <em>Ck</em>. Note that in our test cases, atoms in
+	    a context <em>Ck</em> are
+	    ordered
+	    as <em>ak</em>, <em>bk</em>, <em>ck</em>,... i.e., <em>ak</em>
+	    has position 1, <em>bk</em> has position 2, and so on.
+	  </li>
+	</ul>
+
+	<p>In all of our test cases, the above command lines are
+	automatically generated. More conveniently, we provide shell
+	scripts that automatically execute all the setup and query
+	steps in just one run. For this, run (note that we need all
+	test cases stored in a sub directory 'test' of the current directory):
+	  <pre>$ /bin/bash tests/SHELL_SCRIPT_NAME </pre>
+	</p>
+
+	<p><a href="example/test.zip">Click here to download our test case.</a></p>
 
 	<div style="border-top: 1px solid #999; background-color: inherit; color: #999; font-size: 8.5pt;">
-	  <p>$Id$</p>
+	  <p>$Id: documentation.html 2163 2010-09-08 10:15:56Z mmsc
+	  $</p>
 	</div>
+
+
 
       </div>
 
