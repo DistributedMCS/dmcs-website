@@ -41,6 +41,7 @@
     
       <div class="grid_9">
 
+	<!--
 	<h2>Distributed Nonmonotonic Multi-Context Systems</h2>
                         
 	<p>
@@ -48,11 +49,56 @@
 	href="https://sourceforge.net/projects/dmcs/">DMCS Sourceforge
 	project page</a>.
 	</p>
+	-->
+
+      <h2>Development Version</h2><a name="devel"></a>
+      
+      <p>The current development version of dmcs is hosted at Sourceforge (you
+      can browse the
+      <a href="http://dmcs.svn.sourceforge.net/viewvc/dmcs/">source
+	code</a>).  Please confer
+	the <a href="http://sourceforge.net/projects/dmcs/develop">instructions</a>
+	on how to checkout the current trunk.</p>
+
+      <p>The dmcs development code can be retrieved by executing</p>
+
+      <pre>svn co https://dmcs.svn.sf.net/svnroot/dmcs/dmcs/trunk dmcs</pre>
+
+      <p>
+	Confer <a href="http://dmcs.svn.sourceforge.net/viewvc/dmcs/dmcs/trunk/README?view=markup">README</a>
+	for the list of packages you need to compile the development
+	version of dmcs.
+      </p>
+
+      <h3>Compiling Source Packages Primer</h3>
+	<p>
+	  <b>Requirements for compiling dmcs:</b>
+	  the inevitable <a href="http://www.boost.org/">Boost C++ libraries</a>
+	  (available as packages for all major distributions).
+	</p>
 	
-	<div style="border-top: 1px solid #999; background-color: inherit; color: #999; font-size: 8.5pt;">
-	  <p>$Id$</p>
-	</div>
+	<p>
+	  dmcs is installed with the usual sequence:
+	</p>
+
+	<pre>./configure
+make
+make install</pre>
 	
+	<p>
+	  If you don't want a system-wide installation or don't have root-permissions, use
+	</p>
+
+	<pre>./configure --prefix=/path/to/dir</pre>
+	
+	<p> where <tt>/path/to/dir</tt> is the desired target
+	  prefix. There, the usual <tt>bin/</tt> and <tt>lib/</tt>
+	  will be created, if necessary. </p>
+	
+      <div style="border-top: 1px solid #999; background-color: inherit; color: #999; font-size: 8.5pt;">
+	<p>$Id$</p>
+      </div>
+      
       </div>
 
       <div class="grid_3">
