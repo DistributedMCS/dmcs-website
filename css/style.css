@@ -81,10 +81,12 @@ h1 {
 /*---------------------------------------------
  TABLE from http://www.designinfluences.com/fluid960gs/
 ----------------------------------------------- */
+
 table {
 	width:100%;
 	border:1px solid #bbb;
 	margin-bottom:10px;
+	font-size:9pt;
 }
 col.colC {
 	width:8em;
