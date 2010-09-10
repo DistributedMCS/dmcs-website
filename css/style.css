@@ -99,6 +99,7 @@ thead th {
 	border-bottom:2px solid #888;
 	background:#bbb;
 	padding:.4em 1em .2em;
+	text-align:center;
 }
 thead th.table-head {
 	font-size:1em;
@@ -113,10 +114,12 @@ tbody td {
 	border-top:1px solid #bbb;
 	border-bottom:1px solid #bbb;
 	background:#eee;
+	text-align:center;
 }
 tbody tr.odd th,
 tbody tr.odd td {
 	background:#fff;
+	text-align:center;
 }
 tfoot th,
 tfoot td {
