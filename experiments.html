@@ -84,7 +84,10 @@
 	transfering models between contexts, and the total running time, in
 	the cases of <strong>DMCS</strong> and <strong>DMCSOPT</strong>.</p>
 
-<p><h4>Diamond <img src="images/diamond.png" height="6%" width="6%"/></h4> </p>
+<p><h4>Diamond <img src="images/diamond.png" height="6%"
+		    width="6%"/></h4> </p>
+<p>A diamond stack combines multiple diamonds in a row
+(stacking <em>m</em> diamonds in a tower of <em>3m+1</em> contexts).</p>
 <table border=1>
 <thead>
 <tr>
@@ -441,7 +444,17 @@
 </tr>
 </tbody>
 </table>
-<p><h4>House <img src="images/house.png" height="6%" width="6%"/></h4></p>
+<p><h4>House <img src="images/house.png" height="6%"
+		  width="6%"/></h4></p> 
+
+<p>A house consists of <em>5</em> nodes with <em>6</em> edges (the
+  ridge context has directed edges to the two middle
+  contexts, which form with the two base contexts a
+  cycle with <em>4</em> edges); house stacks are subsequently
+  built up by using the basement nodes as ridges for
+  the next houses (thus, <em>m</em> houses have <em>4m+1</em>
+  contexts).</p>
+
 <table border=1>
 <thead>
 <tr>
