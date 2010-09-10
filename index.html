@@ -126,7 +126,70 @@
 	  and <em>Ms.6</em> is sick.
 	</p>
 
+	<p>The encoding for this example in MCS is as follows:</p>
 
+	<table border=1>
+	  <thead><tr><th colspan="2">C1</th></tr></thead>
+	  <tbody>
+	    <td class="code">
+<tt>car1 :- not train1.</tt><br/>
+<tt>fail1 :- peanuts1, not fail1.</tt>
+	      </td>
+	    <td class="code">
+<tt>train1 :- (2:train2), (3:train3).</tt><br/>
+<tt>peanuts1 :- (3:chocolate_peanuts3).</tt>
+	    </td>
+	  </tbody>
+	  <thead><tr><th colspan="2">C2</th></tr></thead>
+	  <tbody>
+	    <td class="code">
+<tt>fail2 :- not car2, not train2, not fail2.</tt>
+	      </td>
+	    <td class="code">
+<tt>car2 :- (3:car3), (4:car4).</tt><br/>
+<tt>train2 :- (3:train3), (4:train4), not (3:coke3)</tt>
+	    </td>
+	  </tbody>
+	  <thead><tr><th colspan="2">C3</th></tr></thead>
+	  <tbody>
+	    <td class="code">
+<tt>car3 v train3.</tt><br/>
+<tt>train3 :- urgent3.</tt><br/>
+<tt>sandwiches3 v chocolate_peanuts3 :- train3.</tt><br/>
+<tt>coke3 v juice3 :- train3.
+	      </td>
+	    <td class="code">
+<tt>urgent3 :- (6:sick6).</tt><br/>
+<tt>train3 :- (4:train4).</tt>
+	    </td>
+	  </tbody>
+	  <thead><tr><th colspan="2">C4</th></tr></thead>
+	  <tbody>
+	    <td class="code">
+<tt>car4 v train4.</tt>
+	      </td>
+	    <td class="code">
+<tt>train4 :- (5:want_sooner5).</tt>
+	    </td>
+	  </tbody>
+	  <thead><tr><th colspan="2">C5</th></tr></thead>
+	  <tbody>
+	    <td class="code">
+<tt>want_sooner5 :- soon5.</tt>
+	      </td>
+	    <td class="code">
+<tt>soon5 :- (4:train4).</tt>
+	    </td>
+	  </tbody>
+	  <thead><tr><th colspan="2">C6</th></tr></thead>
+	  <tbody>
+	    <td class="code">
+<tt>sick6 v fit6.</tt>
+	      </td>
+	    <td class="code">
+	    </td>
+	  </tbody>
+	</table>
 	  <div style="border-top: 1px solid #999; background-color: inherit; color: #999; font-size: 8.5pt;">
 	  <p>$Id$</p>
 	</div>

@@ -116,6 +116,15 @@ tbody td {
 	background:#eee;
 	text-align:center;
 }
+
+tbody td.code {
+	border-top:1px solid #bbb;
+	border-bottom:1px solid #bbb;
+	background:#eee;
+	text-align:left;
+}
+
+
 tbody tr.odd th,
 tbody tr.odd td {
 	background:#fff;
