@@ -43,6 +43,44 @@
 
 	<h2>Benchmarks</h2>
 
+	<p>We present some results for a SAT-solver based prototype
+	  implementation of <strong>DMCS</strong>
+	  and <strong>DMCSOPT</strong> under Ubuntu Linux 9.10,
+	  written in C++. The host system was using a Pentium Core2
+	  Duo 2.53GHz processor with 4GB RAM. We
+	  used <a href="http://www.cs.uni-potsdam.de/clasp/">clasp
+	  1.3.3</a> as a SAT solver, which
+	  accepts <a href="http://logic.pdmi.ras.ru/~basolver/dimacs.html">DIMACS
+	  CNF</a> as input. Specifically, all generated instantiations
+	  of MCS systems have contexts with ASP logics. The
+	  translation defined
+	  in <a href="literature.html#defk2010-kr">defk2010-kr</a> is
+	  used to create SAT instances at all contexts
+	  and <em>clasp</em> builds all models.</p>
+
+	<p>For initial experimentation, we created random MCS instances of fixed
+	  topologies generalizing the diamond, ring, zig-zag, and house.  A
+	  parameter setting <em>P=(n,s,b,r)</em> specifies
+	<ul>
+	  <li>the number <em>n</em> of contexts,</li>
+	  <li>the local alphabet size <em>|&Sigma;|=s</em> (each
+	    context <em>C</em> has a random ASP program on $s$ atoms
+	    with <em>2^k</em> answer sets, <em>0 &le; k &le; s/2</em>), </li>
+	  <li> the maximum interface size <em>b</em> (number of atoms
+	  exported),</li>
+	  <li> and the maximum number <em>r</em> of bridge rules per
+	    context, each having at most <em>2</em> body literals.</li>
+	  </ul>
+	</p>
+
+	<p>The tables below show some experimental results  for parameter settings
+	<em>(n,10,5,5)</em>, where <em>n</em> varies
+	between <em>10</em> and <em>301</em>, with the respective topologies.
+	Each row
+	displays the number of answers/models, the running time for
+	tasks such as local solving, projection, combination,
+	transfering models between contexts, and the total running time, in
+	the cases of <strong>DMCS</strong> and <strong>DMCSOPT</strong>.</p>
 
 <p><h4>Diamond</h4></p>
 <table border=1>
