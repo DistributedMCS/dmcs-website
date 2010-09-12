@@ -59,8 +59,7 @@
 	<p><b>Step 2</b>: For each context in the system run the
 	following command on its designated machine.</p>
 	
-	<pre>$ dmcsd --context=NUM --kb=FILE --br=FILE --manager=HOST:PORT 
-        --query-variables=QUERY_VARS</pre>
+	<pre>$ dmcsd --context=NUM --kb=FILE --br=FILE --manager=HOST:PORT</pre>
 	
 	<p>Command-line arguments:
 	  <ul>
@@ -72,29 +71,32 @@
 	    bridge rules,</li>
 	    <li><tt>--manager</tt>: set up the location of the
 	    manager.</li>
-	    <li><tt>--query-variables</tt> specifies a list of intergers
-	    (encompassed in a string), each is corresponding to a
-	    filter of atoms for the output of a context in the system,
-	    in which bit position <em>i</em> of the <em>k-th</em>
-	    interger in the list is set to 1 if the user
-	    wants to see the truth value of the <em>i-th</em> atom in
-	    context <em>Ck</em>. Note that in our test cases, atoms in
-	    a context <em>Ck</em> are
-	    ordered
-	    as <em>ak</em>, <em>bk</em>, <em>ck</em>,... i.e., <em>ak</em>
-	    has position 1, <em>bk</em> has position 2, and so on.</li>
 	  </ul>
 
 	<p><b>Step 3</b>: The equilibria of the system
 	wrt. context NUM can be computed by running:</p>
 	
-	<pre>$ dmcsc --context=NUM --manager=HOST:PORT</pre>
+	<pre>$ dmcsc --context=NUM --manager=HOST:PORT [--query-variables=QUERY_VARS]</pre>
 
-	<p>The paramters have the same meaning as above.</p>
+	<p>The paramters have the same meaning as above,
+	    and <tt>--query-variables</tt> specifies a list of
+	    intergers (encompassed in a string), each is corresponding
+	    to a filter of atoms for the output of a context in the
+	    system, in which bit position <em>i</em> of
+	    the <em>k-th</em> interger in the list is set to 1 if the
+	    user wants to see the truth value of the <em>i-th</em>
+	    atom in context <em>Ck</em>. Note that in our test cases,
+	    atoms in a context <em>Ck</em> are ordered
+	    as <em>ak</em>, <em>bk</em>, <em>ck</em>,... i.e., <em>ak</em>
+	    has position 1, <em>bk</em> has position 2, and so on.  If
+	    this parameter is present in the command line
+	    options, <strong>DMCS</strong> will be calles; otherwise,
+	    the system will rung <strong>DMCSOPT</strong>.</p>
 
 	<h3>Running the development version of dmcs</h3>
 
-	<p>Without the present of the manager, one can run the system
+	<p>For the development version of dmcs, the manager refers to
+	the generated topology of the systtem, one can run the system
 	as follows.</p>
 
 	<p><b>Step 1:</b> Setup the daemons for all contexts in the system</p>
@@ -109,18 +111,10 @@
 	topology loaded.</p>
 
 	<p><strong>Step 2:</strong> Computing the equilibria now
-	depends on what kind of topology was loaded in the previous
-	step:</p>
+	is done by:</p>
 
-	<ul>
-	  <li>If the original topology was loaded, run:
-	    <pre>$ dmcsc --hostname=HOST --port=PORT --system-size=NUM --query-variables=QUERY_VARS</pre>
-	  </li>
-	  <li>
-	    Otherwise, when the optimal topology was loaded, run:
-	    <pre>$ dmcsc --hostname=HOST --port=PORT --system-size=NUM</pre>
-	  </li>
-	</ul>
+	<pre>$ dmcsc --hostname=HOST --port=PORT --system-size=NUM --manager=FILE
+        [--query-variables=QUERY_VARS]</pre>
 
 	<p>where:</p>
 	<ul>
@@ -130,6 +124,9 @@
 	  </li>
 	  <li>
 	    <tt>--system-size</tt>: the number of context in the MCS, and
+	  </li>
+	  <li>
+	    <tt>--manager</tt>: the topology file of the system
 	  </li>
 	  <li>
 	    <tt>--query-variables</tt>: as above.
