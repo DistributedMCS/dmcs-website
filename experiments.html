@@ -43,7 +43,63 @@
 
 	<h2>Experiments</h2>
 
+<h3 id="dmcs-models-streaming-experiment"><a href="http://log-ic2011.deri.ie/">Log-IC 2011</a> experimental results for streaming dmcs</h3>
+
+<table border="1">
+<thead>
+<tr>
+<th rowspan="2">Test name</th><th rowspan="2">#answers</th><th rowspan="2">DMCSOPT</th><th colspan="3">DMCS STREAMING</th>
+</tr>
+<tr>
+<th>k=0</th><th>k=10</th><th>k=100</th>
+</tr>
+</thead>
+<tbody><tr class="odd">
+<!-- end -->
+<th rowspan="2">tree(10,10,5,5)</th>
+<td>18</td><td>1.21</td><td>0.24</td><td>0.39</td><td>6.80</td><tr>
+<td>308</td><td>7.46</td><td>0.34</td><td>0.27</td><td>0.65</td><tr class="odd">
+<!-- end -->
+<th rowspan="2">tree(50,10,5,5)</th>
+<td>32</td><td>8.98</td><td>2.28</td><td>3.22</td><td>139.83</td><tr>
+<td>24</td><td>5.92</td><td>2.27</td><td>1.80</td><td>156.18</td><tr class="odd">
+<!-- end -->
+<th rowspan="2">tree(100,10,5,5)</th>
+<td>16</td><td>24.87</td><td>9.10</td><td>5.43</td><td>&mdash;</td><tr>
+<td>4</td><td>13.95</td><td>6.94</td><td>86.26</td><td>&mdash;</td><tr class="odd">
+<!-- end -->
+<th rowspan="2">tree(10,40,20,20)</th>
+<td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>0.15</td><td>0.76</td><tr>
+<td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>0.14</td><td>0.68</td><tr class="odd">
+<!-- end -->
+<th rowspan="2">tree(50,40,20,20)</th>
+<td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>1.66</td><td>8.45</td><tr>
+<td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>1.64</td><td>8.04</td><tr class="odd">
+<!-- end -->
+<th rowspan="2">tree(100,40,20,20)</th>
+<td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>5.04</td><td>27.84</td><tr>
+<td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>5.00</td><td>26.30</td><tr class="odd">
+<!-- end -->
+<th rowspan="2">ring(10,10,5,5)</th>
+<td>12</td><td>2.17</td><td>0.99</td><td>2.44</td><td>&mdash;</td><tr>
+<td>16</td><td>3.11</td><td>3.31</td><td>0.17</td><td>143.83</td><tr class="odd">
+<!-- end -->
+<th rowspan="2">ring(50,10,5,5)</th>
+<td>21</td><td>15.49</td><td>13.43</td><td>&mdash;</td><td>&mdash;</td><tr>
+<td>12</td><td>10.30</td><td>6.43</td><td>&mdash;</td><td>&mdash;</td><tr class="odd">
+<!-- end -->
+<th rowspan="2">ring(10,40,20,20)</th>
+<td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>0.86</td><td>6.27</td><tr>
+<td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>0.51</td><td>5.66</td><tr class="odd">
+<!-- end -->
+<th rowspan="2">ring(50,40,20,20)</th>
+<td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>3.06</td><td>29.81</td><tr>
+<td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>4.29</td><td>43.94</td></tbody>
+</table>
+
+
 <h3 id="dyndmcs-experiment">Experimental Results for dynamic dmcs</h3>
+
 
 <h4>Running with inequality atoms</h4>
 <table border="1">
@@ -1093,6 +1149,7 @@
 
       <div class="grid_3">
 	<p>
+	  <a href="#dmcs-models-streaming-experiment">Streaming DMCS experiment</a><br/>
 	  <a href="#dyndmcs-experiment">Dynamic DMCS experiment</a><br/>
 	  <a href="#dmcsopt-experiment">DMCSOPT experiment</a><br/>
 	  <a href="#dmcs-experiment">DMCS experiment</a><br/>
